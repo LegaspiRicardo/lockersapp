@@ -16,7 +16,7 @@ Visualiza la disponibilidad de lockers por área, consulta la información de lo
 
 ---
 
-## 📖 Descripción
+##  Descripción
 
 Este proyecto simula un sistema para la administración de lockers dentro de un club deportivo.
 
@@ -26,7 +26,7 @@ El proyecto está construido pensando en una futura integración con un backend,
 
 ---
 
-# ✨ Características
+#  Características
 
 - ✅ Visualización por áreas
 - ✅ Lockers disponibles
@@ -42,7 +42,7 @@ El proyecto está construido pensando en una futura integración con un backend,
 
 ---
 
-# 🛠️ Tecnologías
+#  Tecnologías
 
 - React
 - TypeScript
@@ -55,7 +55,7 @@ El proyecto está construido pensando en una futura integración con un backend,
 
 ---
 
-# 🚀 Instalación
+#  Instalación
 
 Clona el repositorio.
 
@@ -77,7 +77,7 @@ npm run dev
 
 ---
 
-# 📌 Estado actual
+#  Estado actual
 
 Actualmente el proyecto funciona completamente con datos simulados.
 
@@ -85,9 +85,9 @@ Los siguientes pasos contemplan la integración con un backend para administrar 
 
 ---
 
-# 🗺️ Roadmap
+#  Roadmap
 
-## ✔ Implementado
+##  Implementado
 
 - [x] Vista de lockers
 - [x] Cambio de áreas
@@ -96,7 +96,7 @@ Los siguientes pasos contemplan la integración con un backend para administrar 
 - [x] Modal de asignación (visual)
 - [x] Componentización
 
-## 🚧 En desarrollo
+##  En desarrollo
 
 - [ ] Búsqueda de socios
 - [ ] Asignar locker
@@ -108,7 +108,7 @@ Los siguientes pasos contemplan la integración con un backend para administrar 
 
 ---
 
-# 💡 Arquitectura
+#  Arquitectura
 
 El proyecto sigue una arquitectura basada en componentes reutilizables.
 
@@ -134,14 +134,9 @@ Esta estructura facilita la integración futura con cualquier backend (Node.js, 
 
 ---
 
-# 📄 Licencia
-
-Proyecto desarrollado con fines demostrativos y educativos.
-
----
 
 <div align="center">
 
-Desarrollado con ❤️ usando React + TypeScript + Tailwind CSS
+Desarrollado por Ricardo Legaspi usando React + TypeScript + Tailwind CSS
 
 </div>

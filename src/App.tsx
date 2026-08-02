@@ -1,8 +1,16 @@
 import { useState } from "react";
 import { areas } from "./data/lockersData";
+import type { Locker } from "./types/Locker";
+import LockerGrid from "./components/LockerGrid";
+import LockerModal from "./components/LockerModal";
+import NewLockerModal from "./components/NewLockerModal";
+
 
 function App() {
   const [areaSeleccionada, setAreaSeleccionada] = useState<number>(2);
+
+  const [lockerSeleccionado, setLockerSeleccionado] =
+  useState<Locker | null>(null);
 
   const areaActual = areas.find(
     (area) => area.id === areaSeleccionada
@@ -61,37 +69,25 @@ function App() {
       </div>
 
       {/* LOCKERS */}
-      <div className="bg-olive-400 rounded-xl shadow-2xl p-1 text-center">
-        <div className="grid grid-cols-7 gap-1 bg-olive-300 mt-4 rounded-xl">
-          {areaActual.filas.map((fila, indiceFila) => (
-            <div key={indiceFila}>
-              <h3 className="my-2 font-bold text-sm uppercase">
-                Fila {indiceFila + 1}
-              </h3>
-              <div className="bg-olive-500/20 p-1 rounded-xl">
-                {fila.map((locker, indiceLocker) => (
-                  <p
-                    key={indiceLocker}
-                    className={
-                      locker === "-"
-                        ? "bg-stone-500/50 p-4 my-2 text-xl text-olive-200 rounded-xl"
-                        : "bg-teal-900/90 p-4 my-2 text-xl text-olive-200 rounded-xl"
-                    }
-                  >
-                    {locker}
-                  </p>
+<LockerGrid
+    area={areaActual}
+    onLockerClick={setLockerSeleccionado}
+/>
 
-                ))}
+{lockerSeleccionado?.estado === "ocupado" && (
+  <LockerModal
+    locker={lockerSeleccionado}
+    onClose={() => setLockerSeleccionado(null)}
+  />
+)}
 
-              </div>
+{lockerSeleccionado?.estado === "disponible" && (
+  <NewLockerModal
+    locker={lockerSeleccionado}
+    onClose={() => setLockerSeleccionado(null)}
+  />
+)}
 
-            </div>
-
-          ))}
-
-        </div>
-
-      </div>
 
     </div>
   );

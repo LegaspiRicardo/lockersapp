@@ -4,6 +4,8 @@ import type { Locker } from "./types/Locker";
 import LockerGrid from "./components/LockerGrid";
 import LockerModal from "./components/LockerModal";
 import NewLockerModal from "./components/NewLockerModal";
+import Header from "./components/Header";
+import SideMenu from "./components/SideMenu";
 
 
 function App() {
@@ -15,6 +17,8 @@ function App() {
   const areaActual = areas.find(
     (area) => area.id === areaSeleccionada
   );
+
+  const [menuOpen, setMenuOpen] = useState(false);
 
   // Validación para TypeScript
   if (!areaActual) {
@@ -28,17 +32,11 @@ function App() {
   return (
     <div className="min-h-screen bg-stone-800 items-center justify-center">
 
-      <div>
-        <div className="px-2 py-1 flex">
-          <img src="/logo.png" alt="" className="w-14 h-14" />
+      <Header
+          onMenuClick={() => setMenuOpen(true)}
+      />
 
-          <button className="ml-auto">
-            <img src="/more.png" alt="" className="w-10 h-10 mr-2" />
-          </button>
-        </div>
-      </div>
-
-      <div className="px-6 py-4">
+      <div className="px-6 pt-18">
         <h1 className="text-4xl font-semibold text-olive-300 mb-2">
           Lockers Club Atlas
         </h1>
@@ -67,26 +65,29 @@ function App() {
           ))}
         </div>
       </div>
-
-      {/* LOCKERS */}
-<LockerGrid
-    area={areaActual}
-    onLockerClick={setLockerSeleccionado}
+<SideMenu
+    open={menuOpen}
+    onClose={() => setMenuOpen(false)}
 />
+      {/* LOCKERS */}
+        <LockerGrid
+            area={areaActual}
+            onLockerClick={setLockerSeleccionado}
+        />
 
-{lockerSeleccionado?.estado === "ocupado" && (
-  <LockerModal
-    locker={lockerSeleccionado}
-    onClose={() => setLockerSeleccionado(null)}
-  />
-)}
+      {lockerSeleccionado?.estado === "ocupado" && (
+        <LockerModal
+          locker={lockerSeleccionado}
+          onClose={() => setLockerSeleccionado(null)}
+        />
+      )}
 
-{lockerSeleccionado?.estado === "disponible" && (
-  <NewLockerModal
-    locker={lockerSeleccionado}
-    onClose={() => setLockerSeleccionado(null)}
-  />
-)}
+      {lockerSeleccionado?.estado === "disponible" && (
+        <NewLockerModal
+          locker={lockerSeleccionado}
+          onClose={() => setLockerSeleccionado(null)}
+        />
+      )}
 
 
     </div>

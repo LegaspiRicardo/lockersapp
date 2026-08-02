@@ -48,7 +48,7 @@ function App() {
 
       {/* ÁREAS */}
 
-      <div className="w-11/12 mx-auto py-2 mb-8 text-olive-400 font-bold">
+      <div className="w-11/12 mx-auto py-2 mb-6 mt-4 text-olive-400 font-bold">
         <div className="flex gap-2">
           {areas.map((area) => (
             <h4

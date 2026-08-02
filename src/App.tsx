@@ -37,7 +37,7 @@ function App() {
       />
 
       <div className="px-6 pt-18">
-        <h1 className="text-4xl font-semibold text-olive-300 mb-2">
+        <h1 className="text-4xl font-semibold text-olive-300 ">
           Lockers Club Atlas
         </h1>
 

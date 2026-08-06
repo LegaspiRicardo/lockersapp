@@ -3,7 +3,7 @@
 
 # 🔐 Lockers Club Atlas
 
-Sistema de administración de lockers desarrollado con **React**, **TypeScript** y **Tailwind CSS**.
+Interfaz de sistema de administración de lockers desarrollado con **React**, **TypeScript** y **Tailwind CSS**.
 
 Visualiza la disponibilidad de lockers por área, consulta la información de los socios asignados y administra espacios disponibles desde una interfaz moderna y responsiva.
 
@@ -96,41 +96,6 @@ Los siguientes pasos contemplan la integración con un backend para administrar 
 - [x] Modal de asignación (visual)
 - [x] Componentización
 
-##  En desarrollo
-
-- [ ] Búsqueda de socios
-- [ ] Asignar locker
-- [ ] Liberar locker
-- [ ] Edición de asignaciones
-- [ ] Persistencia mediante API REST
-- [ ] Autenticación
-- [ ] Dashboard administrativo
-
----
-
-#  Arquitectura
-
-El proyecto sigue una arquitectura basada en componentes reutilizables.
-
-```text
-App
-│
-├── LockerGrid
-│     │
-│     ├── LockerColumn
-│     │      │
-│     │      └── Locker
-│     │
-│     ├── LockerModal
-│     │
-│     └── NewLockerModal
-│
-├── data
-│
-└── types
-```
-
-Esta estructura facilita la integración futura con cualquier backend (Node.js, Laravel, .NET, etc.) sin modificar la interfaz.
 
 ---
 
